@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get("/problems/5", { :controller => "problems", :action => "num_5"})
   get("/problems/6", { :controller => "problems", :action => "num_6"})
   get("/problems/7", { :controller => "problems", :action => "num_7"})
+  get("/problems/7/num_7_display", { :controller => "problems", :action => "num_7_process"})
 
   get("/solutions/1", { :controller => "solutions", :action => "num_1"})
   get("/solutions/2", { :controller => "solutions", :action => "num_2"})

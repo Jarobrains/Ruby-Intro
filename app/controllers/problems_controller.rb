@@ -5,9 +5,16 @@ class ProblemsController  < ApplicationController
     # "true" if number is greater than 11 and false
     # otherwise
     #==================================
-    number = 23
+    number = 10
 
-    @result = "replace this string with your answer"
+    if (number > 11)
+        @result = true
+    end
+
+    if (number < 11)
+        @result = false
+    end
+
     render 'problem'
   end
 
@@ -19,9 +26,13 @@ class ProblemsController  < ApplicationController
     #==================================
     name = "Bob"
 
-    @result = "replace this string with your answer"
+    if (name == "Arjun")
+        @result = "Instructor"
+    else
+        @result = "Not Instructor"
+    end
     render 'problem'
-  end
+    end
 
   def num_3
     #=== Instructions ======================
@@ -31,8 +42,12 @@ class ProblemsController  < ApplicationController
     # for all other cases
     #==================================
     money = 73000
-
-    @result = "replace this string with your answer"
+    if (money < 75000)
+    @result = "No further effect on happiness"
+end
+    if (money > 75000)
+    @result = "Some effect on happiness"
+end
     render 'problem'
   end
 
@@ -43,11 +58,16 @@ class ProblemsController  < ApplicationController
     # "the worst" if activity is equal to "cleaning" and
     # "meh" for all other cases
     #==================================
-    activity = "cleaning"
-
-    @result = "replace this string with your answer"
+    activity = "eating"
+    if (activity == "cleaning")
+    @result = "the worst"
+    elsif (activity == "napping")
+    @result = "the best"
+    else
+    @result = "meh"
+    end
     render 'problem'
-  end
+    end
 
   def num_5
     #=== Instructions ======================
@@ -55,9 +75,14 @@ class ProblemsController  < ApplicationController
     # "A" if score is above 89, "B" if score is above
     # 79 and "C" for all other cases
     #==================================
-    score = 82
-
-    @result = "replace this string with your answer"
+    score = 78
+    if (score > 89)
+    @result = "A"
+    elsif (score > 79)
+    @result = "B"
+    else
+    @result = "C"
+end
     render 'problem'
   end
 
@@ -70,8 +95,18 @@ class ProblemsController  < ApplicationController
     # "heart attack" if food equals "cake shake"
     #==================================
     food = "cake shake"
-
-    @result = "replace this string with your answer"
+if (food = "fruit")
+    @result = "healthy"
+end
+if (food = "vegetables")
+    @result = "healthy"
+end
+if (food = "Lucky Charms")
+    @result = "unhealthy"
+end
+if (food = "cake shake")
+    @result = "heart attack"
+end
     render 'problem'
   end
 
@@ -92,7 +127,21 @@ class ProblemsController  < ApplicationController
     #
     # You'll need to create a new view
     #==================================
+      render 'num_7_display'
+    end
 
+def num_7_process
+    doing = params['doing']
+
+    if doing == "good"
+      @result = "That's great!"
+    elsif doing == "not good"
+      @result = "Bummer"
+    elsif doing == "awful"
+      @result = "Sounds like you've had a rough day"
+    else
+      @result = "I see..."
+    end
     render 'problem'
-  end
+    end
 end
